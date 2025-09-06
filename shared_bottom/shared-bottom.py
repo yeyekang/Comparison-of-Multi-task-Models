@@ -1,11 +1,3 @@
-"""
-Shared-Bottom multi-task learning demo with census income data.
-
-Copyright (c) 2018 Drawbridge, Inc
-Licensed under the MIT License (see LICENSE for details)
-Modified by ChatGPT (2025)
-"""
-
 import random
 
 import pandas as pd
