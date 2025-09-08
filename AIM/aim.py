@@ -1,7 +1,7 @@
 # aim.py
 import torch
 import torch.nn as nn
-from modulation import ModulationLayer
+from modulation import AIMModulation
 
 
 class AIMModel(nn.Module):
@@ -14,7 +14,7 @@ class AIMModel(nn.Module):
         self.shared_bottom = nn.Linear(input_dim, hidden_dim)  # 共享层
         self.task_embeddings = nn.Parameter(torch.randn(task_num, hidden_dim))  # 每个任务一个embedding
         self.modulation_layers = nn.ModuleList(
-            [ModulationLayer(hidden_dim, modulation_type) for _ in range(task_num)]
+            [AIMModulation(hidden_dim, modulation_type) for _ in range(task_num)]
         )
         self.task_towers = nn.ModuleList(
             [nn.Linear(hidden_dim, 1) for _ in range(task_num)]
