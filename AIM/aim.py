@@ -1,4 +1,3 @@
-# aim.py
 import torch
 import torch.nn as nn
 from modulation import AIMModulation
@@ -38,7 +37,6 @@ class AIMModel(nn.Module):
 
 
 if __name__ == "__main__":
-    # 模拟输入测试
     batch_size, input_dim, hidden_dim, task_num = 4, 16, 8, 3
     x = torch.randn(batch_size, input_dim)
 
